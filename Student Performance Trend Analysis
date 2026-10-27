@@ -1,0 +1,35 @@
+subjects = ["Maths", "Physics", "Chemistry"]
+previous = []
+current = []
+
+for subject in subjects:
+    mark = float(input("Enter previous marks in " + subject + ": "))
+    previous.append(mark)
+
+for subject in subjects:
+    mark = float(input("Enter current marks in " + subject + ": "))
+    current.append(mark)
+
+print("\n----- Performance Report -----")
+
+for i in range(len(subjects)):
+    change = current[i] - previous[i]
+
+    print("\nSubject:", subjects[i])
+    print("Previous Marks:", previous[i])
+    print("Current Marks:", current[i])
+
+    if change > 0:
+        print("Improvement:", change)
+    elif change < 0:
+        print("Decline:", abs(change))
+    else:
+        print("No change in marks.")
+
+    if current[i] < 40:
+        print("Status: Weak subject")
+    else:
+        print("Status: Satisfactory")
+
+print("\nPrevious Total:", sum(previous))
+print("Current Total:", sum(current))

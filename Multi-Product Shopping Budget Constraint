@@ -1,0 +1,33 @@
+budget = float(input("Enter your shopping budget: "))
+n = int(input("Enter number of products: "))
+
+products = []
+prices = []
+quantities = []
+
+total = 0
+
+for i in range(n):
+    name = input("Enter product name: ")
+    price = float(input("Enter price: "))
+    quantity = int(input("Enter quantity: "))
+
+    products.append(name)
+    prices.append(price)
+    quantities.append(quantity)
+
+    total += price * quantity
+
+print("\nTotal Shopping Cost:", total)
+print("Available Budget:", budget)
+
+if total <= budget:
+    print("All purchases are within budget.")
+else:
+    excess = total - budget
+    print("Budget exceeded by:", excess)
+    print("Reduce or remove some purchases.")
+
+    for i in range(n):
+        amount = prices[i] * quantities[i]
+        print(products[i], "- Cost:", amount)

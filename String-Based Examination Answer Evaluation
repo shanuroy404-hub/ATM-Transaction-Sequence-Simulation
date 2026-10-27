@@ -1,0 +1,27 @@
+answer_key = ["A", "B", "C", "D", "A"]
+
+correct = 0
+incorrect = 0
+unanswered = 0
+
+marks_per_correct = 1
+negative_mark = 0.25
+
+for i in range(len(answer_key)):
+    answer = input("Enter answer for question " + str(i + 1) +
+                   " (A/B/C/D or blank): ").strip().upper()
+
+    if answer == "":
+        unanswered += 1
+    elif answer == answer_key[i]:
+        correct += 1
+    else:
+        incorrect += 1
+
+score = (correct * marks_per_correct) - (incorrect * negative_mark)
+
+print("\n----- Examination Result -----")
+print("Correct Answers:", correct)
+print("Incorrect Answers:", incorrect)
+print("Unanswered Questions:", unanswered)
+print("Final Score:", score)

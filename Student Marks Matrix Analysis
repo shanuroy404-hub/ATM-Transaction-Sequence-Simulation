@@ -1,0 +1,44 @@
+students = int(input("Enter number of students: "))
+subjects = int(input("Enter number of subjects: "))
+
+marks = []
+
+for i in range(students):
+    row = []
+    print("\nStudent", i + 1)
+
+    for j in range(subjects):
+        mark = float(input("Enter marks for subject " + str(j + 1) + ": "))
+        row.append(mark)
+
+    marks.append(row)
+
+print("\n----- Student Marks Report -----")
+
+highest_total = -1
+top_student = 0
+
+for i in range(students):
+    total = sum(marks[i])
+    average = total / subjects
+
+    print("\nStudent", i + 1)
+    print("Marks:", marks[i])
+    print("Total:", total)
+    print("Average:", average)
+
+    if total > highest_total:
+        highest_total = total
+        top_student = i + 1
+
+print("\nTop Performer: Student", top_student)
+print("Highest Total:", highest_total)
+
+for j in range(subjects):
+    subject_total = 0
+
+    for i in range(students):
+        subject_total += marks[i][j]
+
+    average = subject_total / students
+    print("Average in Subject", j + 1, ":", average)
