@@ -1,3 +1,122 @@
+#Algorithm
+Step 1: Start.
+
+Step 2: Input the number of students and the number of questions.
+
+Step 3: Input the answer key, including the correct answer for each question.
+
+Step 4: Input the student’s name and answers for each question.
+
+Step 5: Initialize correct, incorrect, and unanswered counts to zero.
+
+Step 6: Compare each student’s answer string with the corresponding answer key.
+- If the answer matches the key, increment the correct count.
+- If the answer is empty, increment the unanswered count.
+- Otherwise, increment the incorrect count.
+Step 7: Calculate the marks obtained using the marking scheme.
+\[
+\begin{aligned}
+\text{Score}={}&(\text{Correct}\times\text{Marks per correct})\\
+&-(\text{Incorrect}\times\text{Negative mark})
+\end{aligned}
+\]
+
+Step 8: Store the student’s correct, incorrect, unanswered, and total score.
+
+Step 9: Repeat Steps 4–8 for all students.
+
+Step 10: Display the student-wise results.
+
+Step 11: Stop.
+#Flowchart
+             +------------------+
+             |      START       |
+             +------------------+
+                      |
+                      v
+          +------------------------+
+          | Input number of        |
+          | students and questions |
+          +------------------------+
+                      |
+                      v
+          +------------------------+
+          | Input answer key and   |
+          | marking scheme         |
+          +------------------------+
+                      |
+                      v
+          +------------------------+
+          | Input student name and |
+          | examination answers    |
+          +------------------------+
+                      |
+                      v
+          +------------------------+
+          | Initialize correct,    |
+          | incorrect, unanswered  |
+          | counts to zero         |
+          +------------------------+
+                      |
+                      v
+          +------------------------+
+          | Compare student answer |
+          | with answer key        |
+          +------------------------+
+                      |
+                      v
+             +----------------+
+             | Is answer empty?|
+             +----------------+
+                | Yes    | No
+                v        v
+        +-------------+  +------------------+
+        | Increment   |  | Is answer correct?|
+        | unanswered  |  +------------------+
+        +-------------+       | Yes    | No
+                              v        v
+                       +----------+ +-----------+
+                       | Increment| | Increment |
+                       | correct  | | incorrect |
+                       +----------+ +-----------+
+                              |        |
+                              +----+---+
+                                   |
+                                   v
+                       +----------------------+
+                       | Are all questions    |
+                       | evaluated?           |
+                       +----------------------+
+                           | No       | Yes
+                           |          v
+                           +----< +----------------------+
+                         Next     | Calculate final score|
+                         answer   | using negative marks |
+                                  +----------------------+
+                                             |
+                                             v
+                                  +----------------------+
+                                  | Store student-wise   |
+                                  | examination results  |
+                                  +----------------------+
+                                             |
+                                             v
+                                  +----------------------+
+                                  | Are all students     |
+                                  | evaluated?           |
+                                  +----------------------+
+                                      | No       | Yes
+                                      |          v
+                                      +----< +------------------+
+                                    Next     | Display results  |
+                                    student  +------------------+
+                                                      |
+                                                      v
+                                               +------------+
+                                               |    STOP    |
+                                               +------------+
+
+#code
 answer_key = ["A", "B", "C", "D", "A"]
 
 correct = 0
