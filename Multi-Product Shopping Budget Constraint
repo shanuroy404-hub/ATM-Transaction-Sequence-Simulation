@@ -1,3 +1,119 @@
+#Algorithm
+
+Step 1: Start.
+
+Step 2: Enter the fixed shopping budget and the number of products.
+
+Step 3: Initialize the total cost to zero.
+
+Step 4: For each product, enter the product name, price, and quantity.
+
+Step 5: Calculate the cost of each product.
+
+Product Cost = Price × Quantity
+
+Step 6: Add each product cost to the total cost.
+
+Step 7: Check the discount conditions and calculate the applicable discount.
+
+Step 8: Subtract the total discount from the total cost to calculate the final shopping cost.
+
+Step 9: Compare the final shopping cost with the fixed budget.
+- If the final cost is within the budget, display “Shopping is within budget.”
+- Otherwise, calculate the excess amount and identify products whose quantities can be reduced.
+Step 10: Reduce the selected product quantities until the total cost is within the budget, recalculating discounts whenever necessary.
+
+Step 11: Display the final product quantities, discounts, total cost, and remaining budget.
+
+Step 12: Stop.
+#flowchart
+             ┌───────────────┐
+             │     START     │
+             └───────┬───────┘
+                     |
+                     v
+       /-----------------------------\
+      / Enter budget and number of    \
+      \ products                      /
+       \-----------------------------/
+                     |
+                     v
+       ┌─────────────────────────────┐
+       │ Initialize total cost = 0   │
+       └──────────────┬──────────────┘
+                      |
+                      v
+       /-----------------------------\
+      / Enter product name, price     \
+      \ and quantity                  /
+       \-----------------------------/
+                      |
+                      v
+       ┌─────────────────────────────┐
+       │ Calculate product cost      │
+       │ Price × Quantity            │
+       └──────────────┬──────────────┘
+                      |
+                      v
+       ┌─────────────────────────────┐
+       │ Add product cost to total   │
+       └──────────────┬──────────────┘
+                      |
+                      v
+             ◇ More products? ◇
+              /           \
+            Yes             No
+             |               |
+             └─── Back       v
+                 to    ┌─────────────────────┐
+                 input │ Apply discount      │
+                       │ conditions           │
+                       └──────────┬──────────┘
+                                  |
+                                  v
+                       ┌─────────────────────┐
+                       │ Calculate final cost│
+                       │ after discounts     │
+                       └──────────┬──────────┘
+                                  |
+                                  v
+                       ◇ Final cost <= budget? ◇
+                          /                \
+                        Yes                 No
+                         |                   |
+                         v                   v
+              /------------------\  ┌─────────────────────┐
+             / Display shopping   \ │ Calculate excess    │
+             \ within budget      / │ amount               │
+              \------------------/  └──────────┬──────────┘
+                         |                     |
+                         |                     v
+                         |          ┌─────────────────────┐
+                         |          │ Reduce selected     │
+                         |          │ product quantities  │
+                         |          └──────────┬──────────┘
+                         |                     |
+                         |                     v
+                         |          ┌─────────────────────┐
+                         |          │ Recalculate cost    │
+                         |          │ and discounts       │
+                         |          └──────────┬──────────┘
+                         |                     |
+                         |                     └─── Back to
+                         |                          budget check
+                         v
+              /----------------------\
+             / Display final basket,  \
+            / discounts, total cost    \
+            \ and remaining budget    /
+             \----------------------/
+                         |
+                         v
+                 ┌───────────────┐
+                 │     STOP      │
+                 └───────────────┘
+
+#code
 budget = float(input("Enter your shopping budget: "))
 n = int(input("Enter number of products: "))
 
