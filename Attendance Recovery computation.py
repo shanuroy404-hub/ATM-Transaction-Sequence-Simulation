@@ -1,27 +1,4 @@
-attended = int(input("Enter classes attended: "))
-conducted = int(input("Enter total classes conducted: "))
-required = float(input("Enter required attendance percentage: "))
-
-if conducted == 0:
-    print("No classes have been conducted yet.")
-elif attended < 0 or attended > conducted:
-    print("Invalid attendance details.")
-else:
-    percentage = attended / conducted * 100
-    print("Current Attendance:", percentage, "%")
-
-    if percentage >= required:
-        print("Attendance requirement is satisfied.")
-    else:
-        extra = 0
-
-        while (attended + extra) / (conducted + extra) * 100 < required:
-            extra += 1
-
-        print("Additional consecutive classes required:", extra)
-
-## Algorithm: Attendance Recovery Computation
-
+#Algorithm
 Step 1: Start.
 
 Step 2: Enter the number of classes attended, total classes conducted, and required attendance percentage.
@@ -47,33 +24,123 @@ Step 9: Display the additional consecutive classes required.
 
 Step 10: Stop.
 
-## Flowchart: Attendance Recovery Computation
+#Flowchart
+              +----------------------+
+              |        START         |
+              +----------------------+
+                         |
+                         v
+          +----------------------------+
+          | Input total classes,       |
+          | attended classes and       |
+          | eligibility threshold      |
+          +----------------------------+
+                         |
+                         v
+          +----------------------------+
+          | Validate input values      |
+          +----------------------------+
+                         |
+                         v
+                +----------------+
+                | Input valid?   |
+                +----------------+
+                   | Yes    | No
+                   v        v
+          +----------------+  +------------------+
+          | Calculate      |  | Display invalid  |
+          | current        |  | input message    |
+          | attendance %   |  +------------------+
+          +----------------+          |
+                   |                  v
+                   v                +------+
+          +------------------+      | STOP |
+          | Attendance meets |      +------+
+          | eligibility      |
+          | threshold?       |
+          +------------------+
+              | Yes     | No
+              v         v
+      +---------------+ +----------------------+
+      | Display       | | Initialize required  |
+      | Eligible      | | consecutive classes  |
+      +---------------+ | = 0                  |
+              |         +----------------------+
+              |                    |
+              |                    v
+              |         +----------------------+
+              |         | Assume attendance at |
+              |         | next class           |
+              |         +----------------------+
+              |                    |
+              |                    v
+              |         +----------------------+
+              |         | Increase attended    |
+              |         | and total classes    |
+              |         | by 1; update count   |
+              |         +----------------------+
+              |                    |
+              |                    v
+              |         +----------------------+
+              |         | Recalculate projected|
+              |         | attendance %         |
+              |         +----------------------+
+              |                    |
+              |                    v
+              |         +----------------------+
+              |         | Threshold reached?   |
+              |         +----------------------+
+              |            | No       | Yes
+              |            |          |
+              |            +----<     v
+              |          Next class +------------------+
+              |                     | Display minimum  |
+              |                     | classes required |
+              |                     +------------------+
+              |                              |
+              +------------------------------+
+                                             |
+                                             v
+                                +------------------------+
+                                | Evaluate other future  |
+                                | attendance scenarios   |
+                                +------------------------+
+                                             |
+                                             v
+                                +------------------------+
+                                | Display attendance and |
+                                | scenario-wise results  |
+                                +------------------------+
+                                             |
+                                             v
+                                      +-----------+
+                                      |   STOP    |
+                                      +-----------+
 
-flowchart TD
-    A([Start]) --> B[/Enter attended, conducted, required percentage/]
-    B --> C{Conducted == 0?}
-    C -- Yes --> D[/Display No classes conducted/]
-    D --> Z([Stop])
-    C -- No --> E{Attended < 0 or Attended > Conducted?}
-    E -- Yes --> F[/Display Invalid attendance details/]
-    F --> Z
-    E -- No --> G[Calculate percentage = attended / conducted * 100]
-    G --> H[/Display current attendance percentage/]
-    H --> I{Percentage >= required?}
-    I -- Yes --> J[/Display Attendance requirement satisfied/]
-    J --> Z
-    I -- No --> K[Set extra = 0]
-    K --> L{(attended + extra) / (conducted + extra) * 100 < required?}
-    L -- Yes --> M[extra = extra + 1]
-    M --> L
-    L -- No --> N[/Display additional consecutive classes required/]
-    N --> Z
+#code
+attended = int(input("Enter classes attended: "))
+conducted = int(input("Enter total classes conducted: "))
+required = float(input("Enter required attendance percentage: "))
+
+if conducted == 0:
+    print("No classes have been conducted yet.")
+elif attended < 0 or attended > conducted:
+    print("Invalid attendance details.")
+else:
+    percentage = attended / conducted * 100
+    print("Current Attendance:", percentage, "%")
+
+    if percentage >= required:
+        print("Attendance requirement is satisfied.")
+    else:
+        extra = 0
+
+        while (attended + extra) / (conducted + extra) * 100 < required:
+            extra += 1
+
+        print("Additional consecutive classes required:", extra")
 
 
-### Flowchart symbols
 
-- Oval: Start and Stop
-- Parallelogram: Input and Output
-- Rectangle: Calculation or process
-- Diamond: Decision
-- Arrow: Flow direction'''
+
+
