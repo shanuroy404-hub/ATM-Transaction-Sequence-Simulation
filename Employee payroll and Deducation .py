@@ -1,3 +1,82 @@
+#Algorithm
+Step 1: Start.
+
+Step 2: Enter the employee name, basic salary, allowances, overtime amount, and incentives.
+
+Step 3: Calculate the gross salary.
+
+Gross Salary = Basic Salary + Allowances + Overtime + Incentives
+
+Step 4: Calculate applicable deductions, such as Provident Fund (PF) and tax, according to the given rates and rules.
+
+Step 5: Calculate progressive tax by applying the appropriate tax rate to each applicable income slab.
+
+Step 6: Calculate total deductions.
+
+Total Deductions = PF + Tax + Other Deductions
+
+Step 7: Calculate the net salary.
+
+Net Salary = Gross Salary − Total Deductions
+
+Step 8: Generate and display the formatted salary statement containing employee details, salary components, gross salary, deductions, and net salary.
+
+Step 9: Stop.
+
+#Flowchart
+             ┌───────────────┐
+             │     START     │
+             └───────┬───────┘
+                     |
+                     v
+       /-----------------------------\
+      / Enter employee name, basic    \
+      \ salary, allowances, overtime, /
+       \ and incentives               /
+                     |
+                     v
+       ┌─────────────────────────────┐
+       │ Calculate Gross Salary      │
+       │ Basic + Allowances +        │
+       │ Overtime + Incentives       │
+       └──────────────┬──────────────┘
+                      |
+                      v
+       ┌─────────────────────────────┐
+       │ Calculate PF and Other      │
+       │ Applicable Deductions       │
+       └──────────────┬──────────────┘
+                      |
+                      v
+       ┌─────────────────────────────┐
+       │ Calculate Progressive Tax   │
+       │ Using Applicable Tax Slabs  │
+       └──────────────┬──────────────┘
+                      |
+                      v
+       ┌─────────────────────────────┐
+       │ Calculate Total Deductions  │
+       │ PF + Tax + Other Deductions │
+       └──────────────┬──────────────┘
+                      |
+                      v
+       ┌─────────────────────────────┐
+       │ Calculate Net Salary        │
+       │ Gross Salary - Deductions   │
+       └──────────────┬──────────────┘
+                      |
+                      v
+        /----------------------------\
+       / Display Formatted Salary     \
+       \ Statement and Net Salary    /
+        \----------------------------/
+                      |
+                      v
+             ┌───────────────┐
+             │     STOP      │
+             └───────────────┘
+
+#code
 name = input("Enter employee name: ")
 basic = float(input("Enter basic salary: "))
 da = basic * 0.42
