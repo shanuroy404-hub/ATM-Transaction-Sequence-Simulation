@@ -1,3 +1,119 @@
+#Algorithm
+step 1: Start.
+
+Step 2: Enter the total travel budget in the base currency, such as Indian Rupees (INR).
+
+Step 3: Enter the number of expense categories, such as food, transport, accommodation, and shopping.
+
+Step 4: For each expense category, enter the category name, expense amount in foreign currency, exchange rate, and conversion fee percentage.
+
+Step 5: Convert the expense into the base currency.
+
+Converted Amount = Foreign Currency Amount × Exchange Rate
+
+Step 6: Calculate the conversion fee.
+
+Conversion Fee = Converted Amount × Fee Percentage / 100
+
+Step 7: Calculate the total expense for each category.
+
+Total Category Expense = Converted Amount + Conversion Fee
+
+Step 8: Add each category expense to calculate the total travel expenditure.
+
+Step 9: Compare the total travel expenditure with the budget.
+- If the total expenditure is within the budget, display “Within Budget.”
+- Otherwise, display “Budget Exceeded” and calculate the excess amount.
+Step 10: Identify the expense category with the largest total expense.
+
+Step 11: Display the converted expenses, conversion fees, total expenditure, budget status, remaining or excess amount, and largest expense category.
+
+Step 12: Stop.
+
+#Flowchart
+                ┌───────────────┐
+                │     START     │
+                └───────┬───────┘
+                        |
+                        v
+          /----------------------------\
+         / Enter travel budget and      \
+         \ number of expense categories /
+          \----------------------------/
+                        |
+                        v
+          ┌────────────────────────────┐
+          │ Initialize total expense   │
+          │ and largest expense        │
+          └─────────────┬──────────────┘
+                        |
+                        v
+          /----------------------------\
+         / Enter category, foreign      \
+         \ amount, exchange rate and    /
+          \ conversion fee percentage  /
+                        |
+                        v
+          ┌────────────────────────────┐
+          │ Convert expense to base    │
+          │ currency                   │
+          └─────────────┬──────────────┘
+                        |
+                        v
+          ┌────────────────────────────┐
+          │ Calculate conversion fee   │
+          └─────────────┬──────────────┘
+                        |
+                        v
+          ┌────────────────────────────┐
+          │ Calculate category expense │
+          │ Converted amount + fee     │
+          └─────────────┬──────────────┘
+                        |
+                        v
+                 ◇ More categories? ◇
+                    /          \
+                  Yes           No
+                   |             |
+                   └── Repeat    v
+                       input  ┌─────────────────────┐
+                              │ Calculate total     │
+                              │ travel expenditure  │
+                              └──────────┬──────────┘
+                                         |
+                                         v
+                              ◇ Total > Budget? ◇
+                                 /          \
+                               Yes           No
+                                |             |
+                                v             v
+                     /----------------\  /----------------\
+                    / Display Budget   \ / Display Within  \
+                    \ Exceeded         / \ Budget          /
+                     \----------------/   \----------------/
+                                |             |
+                                └──────┬──────┘
+                                       |
+                                       v
+                         ┌────────────────────────┐
+                         │ Identify largest       │
+                         │ expense category       │
+                         └────────────┬───────────┘
+                                      |
+                                      v
+                         /------------------------\
+                        / Display converted costs, \
+                       / fees, total expenditure,   \
+                       \ budget status and largest  /
+                        \ expense category          /
+                         \------------------------/
+                                      |
+                                      v
+                               ┌───────────┐
+                               │   STOP    │
+                               └───────────┘
+
+#code
 budget = float(input("Enter travel budget in INR: "))
 n = int(input("Enter number of expenses: "))
 
