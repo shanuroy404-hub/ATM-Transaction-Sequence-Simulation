@@ -1,3 +1,98 @@
+#Algorithm
+step 1: Start.
+
+Step 2: Input the number of students and the number of subjects.
+
+Step 3: Input the names of students and subjects.
+
+Step 4: Store the marks of all students in a matrix, where rows represent students and columns represent subjects.
+
+Step 5: Initialize the total marks and average for each student.
+
+Step 6: Calculate the row-wise statistics for each student:
+- Calculate total marks.
+- Calculate average marks.
+- Identify the highest and lowest marks if required.
+Step 7: Identify the student with the highest total marks as the top performer.
+
+Step 8: Calculate the column-wise statistics for each subject:
+- Calculate total marks.
+- Calculate average marks.
+Step 9: Compare each subject's average with the specified minimum average threshold.
+
+Step 10: Identify and display subjects whose average marks are below the threshold.
+
+Step 11: Display student-wise totals, averages, top performers, subject-wise averages, and low-performing subjects.
+
+Step 12: Stop.
+#Flowchart
+             +----------------------+
+             |        START         |
+             +----------------------+
+                        |
+                        v
+          +----------------------------+
+          | Input number of students   |
+          | and number of subjects     |
+          +----------------------------+
+                        |
+                        v
+          +----------------------------+
+          | Input student names,       |
+          | subject names and marks    |
+          +----------------------------+
+                        |
+                        v
+          +----------------------------+
+          | Store marks in a matrix    |
+          +----------------------------+
+                        |
+                        v
+          +----------------------------+
+          | Calculate each student's   |
+          | total and average marks    |
+          +----------------------------+
+                        |
+                        v
+          +----------------------------+
+          | Identify top performer     |
+          | using total marks          |
+          +----------------------------+
+                        |
+                        v
+          +----------------------------+
+          | Calculate each subject's   |
+          | total and average marks    |
+          +----------------------------+
+                        |
+                        v
+          +----------------------------+
+          | Is subject average below   |
+          | the minimum threshold?     |
+          +----------------------------+
+                  | Yes        | No
+                  v            |
+          +----------------+   |
+          | Mark subject   |   |
+          | as low-performing| |
+          +----------------+   |
+                  |            |
+                  +------+-----+
+                         |
+                         v
+          +----------------------------+
+          | Display student-wise and   |
+          | subject-wise statistics,   |
+          | top performers and weak    |
+          | subjects                  |
+          +----------------------------+
+                        |
+                        v
+             +----------------------+
+             |         STOP         |
+             +----------------------+
+
+#code
 students = int(input("Enter number of students: "))
 subjects = int(input("Enter number of subjects: "))
 
