@@ -1,3 +1,125 @@
+#Algorithm
+Step 1: Start.
+
+Step 2: Input the number of students, subjects, and examinations.
+
+Step 3: Input student names, subject names, and each student's marks in every examination.
+
+Step 4: Initialize improvement, decline, and weak-subject records.
+
+Step 5: Compare each student's scores between consecutive examinations for every subject.
+
+Step 6: Calculate the score change.
+\[
+\text{Score Change}=\text{Current Score}-\text{Previous Score}
+\]
+
+Step 7: If the score change is positive, record an improvement. If negative, record a decline. If zero, record no change.
+
+Step 8: Calculate the average marks for each subject across all examinations.
+
+Step 9: Identify consistently weak subjects by checking whether their scores remain below the defined minimum threshold across examinations.
+
+Step 10: Calculate each student's overall average performance.
+
+Step 11: Classify students according to predefined criteria, for example:
+- Excellent: Average ≥ 80%
+- Good: Average ≥ 60% and below 80%
+- Average: Average ≥ 40% and below 60%
+- Needs Improvement: Average below 40%
+Step 12: Display student-wise improvements, declines, weak subjects, averages, and performance classifications.
+
+Step 13: Stop.
+#Flowchart
+             +----------------------+
+             |        START         |
+             +----------------------+
+                        |
+                        v
+          +----------------------------+
+          | Input number of students,  |
+          | subjects and examinations  |
+          +----------------------------+
+                        |
+                        v
+          +----------------------------+
+          | Input marks for all        |
+          | students, subjects and     |
+          | examinations               |
+          +----------------------------+
+                        |
+                        v
+          +----------------------------+
+          | Compare consecutive        |
+          | examination scores         |
+          +----------------------------+
+                        |
+                        v
+          +----------------------------+
+          | Calculate score change     |
+          | = Current - Previous       |
+          +----------------------------+
+                        |
+                        v
+                 +--------------+
+                 | Score change?|
+                 +--------------+
+                  /      |      \
+             Positive   Zero   Negative
+                |        |        |
+                v        v        v
+          +----------+ +------+ +----------+
+          | Record   | |Record| | Record   |
+          |improvement| | no  | | decline  |
+          |          | |change| |          |
+          +----------+ +------+ +----------+
+                  \      |      /
+                   \     |     /
+                        v
+          +----------------------------+
+          | Are all score comparisons |
+          | completed?                |
+          +----------------------------+
+                 | No          | Yes
+                 |             v
+                 +----< +------------------------+
+                Next    | Calculate subject-wise |
+             comparison | averages across exams  |
+                        +------------------------+
+                                   |
+                                   v
+                        +------------------------+
+                        | Identify consistently  |
+                        | weak subjects using    |
+                        | the minimum threshold  |
+                        +------------------------+
+                                   |
+                                   v
+                        +------------------------+
+                        | Calculate each         |
+                        | student's overall      |
+                        | average                |
+                        +------------------------+
+                                   |
+                                   v
+                        +------------------------+
+                        | Classify students as   |
+                        | Excellent, Good,       |
+                        | Average or Needs       |
+                        | Improvement            |
+                        +------------------------+
+                                   |
+                                   v
+                        +------------------------+
+                        | Display performance    |
+                        | trends and final report|
+                        +------------------------+
+                                   |
+                                   v
+                           +---------------+
+                           |     STOP      |
+                           +---------------+
+#code
 subjects = ["Maths", "Physics", "Chemistry"]
 previous = []
 current = []
